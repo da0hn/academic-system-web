@@ -1,0 +1,10 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    implementation_imports: true
+    prefer_relative_imports: true
+    unnecessary_this: false
+    prefer_single_quotes: true
+
+
