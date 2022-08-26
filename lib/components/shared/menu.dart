@@ -37,6 +37,11 @@ class Menu extends StatelessWidget {
             itemBuilder: (context) => [
               _subMenuItem(
                 context: context,
+                value: Routes.courses,
+                label: 'Cursos',
+              ),
+              _subMenuItem(
+                context: context,
                 value: Routes.subjects,
                 label: 'Disciplinas',
               ),

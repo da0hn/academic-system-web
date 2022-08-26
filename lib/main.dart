@@ -1,4 +1,5 @@
 import 'package:academic_system/constants.dart';
+import 'package:academic_system/screens/course_screen.dart';
 import 'package:academic_system/screens/main_screen.dart';
 import 'package:academic_system/screens/student_screen.dart';
 import 'package:academic_system/screens/subject_screen.dart';
@@ -32,6 +33,10 @@ class AcademicSystem extends StatelessWidget {
         GetPage(
           name: Routes.students,
           page: () => const StudentScreen(),
+        ),
+        GetPage(
+          name: Routes.courses,
+          page: () => const CourseScreen(),
         ),
       ],
     );
