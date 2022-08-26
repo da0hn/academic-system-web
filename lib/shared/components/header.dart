@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants.dart';
 import 'menu.dart';
@@ -31,7 +32,12 @@ class Header extends StatelessWidget {
                   .copyWith(color: Colors.black),
             ),
             const SizedBox(width: Constraints.padding16),
-            const Icon(Icons.account_balance, size: 64.0),
+            IconButton(
+              padding: const EdgeInsets.all(Constraints.padding8),
+              onPressed: () => Get.toNamed(Routes.home),
+              icon: const Icon(Icons.account_balance),
+              iconSize: 64,
+            ),
           ],
         ),
       ),
