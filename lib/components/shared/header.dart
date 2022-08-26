@@ -35,7 +35,7 @@ class Header extends StatelessWidget {
               padding: const EdgeInsets.all(Constraints.padding8),
               onPressed: () => Get.toNamed(Routes.home),
               icon: const Icon(Icons.account_balance),
-              iconSize: 64,
+              iconSize: 54,
             ),
           ],
         ),
