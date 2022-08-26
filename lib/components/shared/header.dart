@@ -1,8 +1,7 @@
+import 'package:academic_system/components/shared/menu.dart';
+import 'package:academic_system/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../constants.dart';
-import 'menu.dart';
 
 class Header extends StatelessWidget {
   const Header({
