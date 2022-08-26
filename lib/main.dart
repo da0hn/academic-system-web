@@ -25,17 +25,14 @@ class AcademicSystem extends StatelessWidget {
         GetPage(
           name: Routes.home,
           page: () => const MainScreen(),
-          transition: Transition.cupertino,
         ),
         GetPage(
           name: Routes.catalogs,
           page: () => const CatalogScreen(),
-          transition: Transition.cupertino,
         ),
         GetPage(
           name: Routes.members,
           page: () => const MemberScreen(),
-          transition: Transition.cupertino,
         ),
       ],
     );
