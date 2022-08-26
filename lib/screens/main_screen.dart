@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../shared/components/header.dart';
+import '../shared/components/base_layout.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -8,14 +8,9 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const Header(),
-            Expanded(
-              child: Container(),
-            ),
-          ],
+      body: BaseLayout(
+        child: Container(
+          color: Colors.green,
         ),
       ),
     );
