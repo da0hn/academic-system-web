@@ -13,7 +13,7 @@ class Header extends StatelessWidget {
     return Material(
       elevation: 16.0,
       child: Container(
-        padding: const EdgeInsets.all(Constants.padding8),
+        padding: const EdgeInsets.all(Constraints.padding8),
         height: 100,
         color: Theme.of(context).backgroundColor,
         child: Row(
@@ -30,7 +30,7 @@ class Header extends StatelessWidget {
                   .headline2!
                   .copyWith(color: Colors.black),
             ),
-            const SizedBox(width: Constants.padding16),
+            const SizedBox(width: Constraints.padding16),
             const Icon(Icons.account_balance, size: 64.0),
           ],
         ),

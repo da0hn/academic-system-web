@@ -11,7 +11,7 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Constants.padding16),
+      padding: const EdgeInsets.all(Constraints.padding16),
       height: 60,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -61,7 +61,7 @@ class Menu extends StatelessWidget {
   }) {
     return PopupMenuItem(
       value: value,
-      padding: const EdgeInsets.all(Constants.padding16),
+      padding: const EdgeInsets.all(Constraints.padding16),
       child: Text(
         label,
         style: Theme.of(context)
