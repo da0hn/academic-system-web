@@ -5,7 +5,8 @@ class Constraints {
 }
 
 class Routes {
-  static const String catalogs = '/catalogs';
-  static const String members = '/members';
+  static const String subjects = '/subjects';
+  static const String students = '/students';
+  static const String courses = '/courses';
   static const String home = '/home';
 }

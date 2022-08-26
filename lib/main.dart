@@ -1,7 +1,7 @@
 import 'package:academic_system/constants.dart';
-import 'package:academic_system/screens/catalog_screen.dart';
 import 'package:academic_system/screens/main_screen.dart';
-import 'package:academic_system/screens/member_screen.dart';
+import 'package:academic_system/screens/student_screen.dart';
+import 'package:academic_system/screens/subject_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,12 +26,12 @@ class AcademicSystem extends StatelessWidget {
           page: () => const MainScreen(),
         ),
         GetPage(
-          name: Routes.catalogs,
-          page: () => const CatalogScreen(),
+          name: Routes.subjects,
+          page: () => const SubjectScreen(),
         ),
         GetPage(
-          name: Routes.members,
-          page: () => const MemberScreen(),
+          name: Routes.students,
+          page: () => const StudentScreen(),
         ),
       ],
     );
