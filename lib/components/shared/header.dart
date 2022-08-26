@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
       elevation: 16.0,
       child: Container(
         padding: const EdgeInsets.all(Constraints.padding8),
-        height: 100,
+        height: 80,
         color: Theme.of(context).backgroundColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
