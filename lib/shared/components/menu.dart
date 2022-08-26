@@ -18,6 +18,9 @@ class Menu extends StatelessWidget {
         children: [
           PopupMenuButton<String>(
             elevation: 10.0,
+            onSelected: (String value) {
+              print('OnSelected call $value');
+            },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -31,24 +34,39 @@ class Menu extends StatelessWidget {
                 ),
               ],
             ),
-            itemBuilder: (context) {
-              return List.generate(5, (index) {
-                return PopupMenuItem(
-                  value: '',
-                  padding: const EdgeInsets.all(Constants.padding16),
-                  child: Text(
-                    'button no $index',
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline5!
-                        .copyWith(color: Colors.black),
-                  ),
-                );
-              });
-            },
+            itemBuilder: (context) => [
+              _subMenuItem(
+                context: context,
+                value: '/catalogs',
+                label: 'Catalagos',
+              ),
+              _subMenuItem(
+                context: context,
+                value: '/members',
+                label: 'Membros',
+              )
+            ],
           ),
           const VerticalDivider(color: Colors.black, width: 20),
         ],
+      ),
+    );
+  }
+
+  PopupMenuItem<String> _subMenuItem({
+    required BuildContext context,
+    required String value,
+    required String label,
+  }) {
+    return PopupMenuItem(
+      value: value,
+      padding: const EdgeInsets.all(Constants.padding16),
+      child: Text(
+        label,
+        style: Theme.of(context)
+            .textTheme
+            .headline5!
+            .copyWith(color: Colors.black),
       ),
     );
   }
