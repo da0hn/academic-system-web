@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'constants.dart';
 import 'screens/catalog_screen.dart';
 import 'screens/main_screen.dart';
 import 'screens/member_screen.dart';
@@ -19,14 +20,14 @@ class AcademicSystem extends StatelessWidget {
       theme: _themeData(),
       debugShowCheckedModeBanner: false,
       home: const MainScreen(),
-      initialRoute: '/',
+      initialRoute: Routes.home,
       getPages: [
         GetPage(
-          name: '/catalogs',
+          name: Routes.catalogs,
           page: () => const CatalogScreen(),
         ),
         GetPage(
-          name: '/members',
+          name: Routes.members,
           page: () => const MemberScreen(),
         ),
       ],
