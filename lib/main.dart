@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'screens/catalog_screen.dart';
 import 'screens/main_screen.dart';
+import 'screens/member_screen.dart';
 
 void main() {
   runApp(const AcademicSystem());
@@ -17,6 +19,17 @@ class AcademicSystem extends StatelessWidget {
       theme: _themeData(),
       debugShowCheckedModeBanner: false,
       home: const MainScreen(),
+      initialRoute: '/',
+      getPages: [
+        GetPage(
+          name: '/catalogs',
+          page: () => const CatalogScreen(),
+        ),
+        GetPage(
+          name: '/members',
+          page: () => const MemberScreen(),
+        ),
+      ],
     );
   }
 

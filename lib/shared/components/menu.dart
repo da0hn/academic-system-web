@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../constants.dart';
 
@@ -19,7 +20,7 @@ class Menu extends StatelessWidget {
           PopupMenuButton<String>(
             elevation: 10.0,
             onSelected: (String value) {
-              print('OnSelected call $value');
+              Get.toNamed(value);
             },
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
