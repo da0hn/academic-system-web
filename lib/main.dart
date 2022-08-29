@@ -49,12 +49,15 @@ class AcademicSystem extends StatelessWidget {
         caption: GoogleFonts.tekoTextTheme().caption,
         subtitle1: GoogleFonts.tekoTextTheme().subtitle1,
         subtitle2: GoogleFonts.tekoTextTheme().subtitle2,
+        headline1: GoogleFonts.tekoTextTheme().headline1,
         headline2: GoogleFonts.tekoTextTheme().headline2,
         headline3: GoogleFonts.tekoTextTheme().headline3,
+        headline4: GoogleFonts.tekoTextTheme().headline4,
+        headline5: GoogleFonts.tekoTextTheme().headline5,
         headline6: GoogleFonts.tekoTextTheme().headline6,
       ),
       backgroundColor: const Color(0xFFF8F2E1),
-      primaryColor: const Color(0xFFFADBB7),
+      primaryColor: const Color(0xFFEBEAE5),
       hoverColor: const Color(0xFFC2C77B),
       scaffoldBackgroundColor: const Color(0xFFDED8CA),
       appBarTheme: const AppBarTheme(
@@ -64,9 +67,19 @@ class AcademicSystem extends StatelessWidget {
         buttonColor: Color(0xFFAD8164),
         hoverColor: Color(0xFF425f5a),
         padding: EdgeInsets.all(16.0),
-        textTheme: ButtonTextTheme.normal,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16.0)),
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.black,
+          fixedSize: const Size(160, 40),
+          shape: const StadiumBorder(),
+          padding: const EdgeInsets.all(Constraints.padding8),
+          elevation: 20,
+          primary: const Color(0xFFF8DAB6),
+          textStyle: GoogleFonts.tekoTextTheme().button!.copyWith(fontSize: 24),
         ),
       ),
       colorScheme: const ColorScheme.light().copyWith(
