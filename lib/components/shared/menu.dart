@@ -1,4 +1,5 @@
 import 'package:academic_system/constants.dart';
+import 'package:academic_system/modules/courses/course_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -37,7 +38,7 @@ class Menu extends StatelessWidget {
             itemBuilder: (context) => [
               _subMenuItem(
                 context: context,
-                value: Routes.courses,
+                value: CourseRoutes.root,
                 label: 'Cursos',
               ),
               _subMenuItem(

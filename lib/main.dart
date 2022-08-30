@@ -1,5 +1,5 @@
 import 'package:academic_system/constants.dart';
-import 'package:academic_system/modules/courses/courses.dart';
+import 'package:academic_system/modules/courses/course_routes.dart';
 import 'package:academic_system/modules/home/main_screen.dart';
 import 'package:academic_system/modules/student/student_screen.dart';
 import 'package:academic_system/modules/subject/subject_screen.dart';
@@ -34,11 +34,7 @@ class AcademicSystem extends StatelessWidget {
           name: Routes.students,
           page: () => const StudentScreen(),
         ),
-        GetPage(
-          name: Routes.courses,
-          page: () => const ListCourseScreen(),
-          binding: CourseBinding(),
-        ),
+        ...CourseRoutes.routes
       ],
     );
   }
