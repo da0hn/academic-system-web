@@ -1,19 +1,16 @@
 class Course {
-  final int _id;
-  final String _name;
-  final int _periods;
+  int? id;
+  final String name;
+  final int periods;
 
-  String get name => _name;
+  @override
+  String toString() {
+    return 'Course{id: $id, name: $name, periods: $periods}';
+  }
 
-  int get id => _id;
-
-  int get periods => _periods;
-
-  const Course({
-    required int id,
-    required String name,
-    required int periods,
-  })  : _id = id,
-        _name = name,
-        _periods = periods;
+  Course({
+    this.id,
+    required this.name,
+    required this.periods,
+  });
 }

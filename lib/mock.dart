@@ -4,9 +4,9 @@ import 'package:academic_system/domain/model/subject.dart';
 
 class MockData {
   static List<Course> courses = [
-    const Course(id: 1, name: 'Engenharia da Computação', periods: 10),
-    const Course(id: 2, name: 'Ciência da Computação', periods: 8),
-    const Course(id: 3, name: 'Matemática', periods: 8),
+    Course(id: 1, name: 'Engenharia da Computação', periods: 10),
+    Course(id: 2, name: 'Ciência da Computação', periods: 8),
+    Course(id: 3, name: 'Matemática', periods: 8),
   ];
   static List<Subject> subjects = [
     Subject(id: 1, name: 'Cálculo I', period: 1, courses: [
