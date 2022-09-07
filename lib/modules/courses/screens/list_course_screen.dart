@@ -19,14 +19,14 @@ class ListCourseScreen extends GetView<CourseListController> {
             const SizedBox(height: Constraints.padding16),
             HeaderTableList(
               label: 'Cursos',
-              onCreate: () => Get.toNamed(CourseRoutes.newCourse),
+              onCreate: () => Get.offAndToNamed(CourseRoutes.newCourse),
             ),
             const SizedBox(height: Constraints.padding16),
             Expanded(
               flex: 8,
               child: Obx(
                 () => TableList<Course>(
-                  data: controller.courses$.value,
+                  data: controller.courses$.toList(),
                   headers: [
                     TableData.header(context, 'ID'),
                     TableData.header(context, 'NOME'),
