@@ -52,34 +52,51 @@ class CourseForm extends GetView<CourseFormController> {
                 padding: const EdgeInsets.all(Constraints.padding16),
                 child: Row(
                   children: [
-                    Expanded(
+                    SizedBox(
+                      width: 200,
                       child: DropdownButtonFormField<int>(
                         onChanged: this.controller.changePeriod,
-                        borderRadius:
-                            BorderRadius.circular(Constraints.padding16),
+                        borderRadius: BorderRadius.circular(
+                          Constraints.padding16,
+                        ),
                         hint: const Text('Quantidade de Semestres'),
-                        items: controller.quantityOfPeriods,
+                        items: this
+                            .controller
+                            .periods
+                            .map(
+                              (element) => DropdownMenuItem(
+                                value: element,
+                                child: Text('$element Semestres'),
+                              ),
+                            )
+                            .toList(),
                       ),
                     ),
-                    const Spacer(flex: 2),
+                    const Spacer(flex: 4),
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  const Spacer(flex: 2),
-                  Expanded(
-                    child: TextButton.icon(
-                      onPressed: () {
-                        this.controller.create();
-                        Get.offAndToNamed(CourseRoutes.root);
-                      },
-                      icon: const Icon(Icons.add_outlined, size: 38),
-                      style: Theme.of(context).textButtonTheme.style,
-                      label: const Text('ADICIONAR'),
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(Constraints.padding16),
+                child: Row(
+                  children: [
+                    const Spacer(flex: 4),
+                    SizedBox(
+                      height: 60,
+                      width: 200,
+                      child: TextButton.icon(
+                        onPressed: () {
+                          this.controller.create();
+                          Get.offAndToNamed(CourseRoutes.root);
+                        },
+                        icon: const Icon(Icons.add_outlined, size: 38),
+                        style: Theme.of(context).textButtonTheme.style,
+                        label: const Text('ADICIONAR'),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),

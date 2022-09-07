@@ -14,13 +14,7 @@ class CourseFormController extends GetxController {
     required this.service,
   });
 
-  get quantityOfPeriods => List.generate(
-        11,
-        (index) => DropdownMenuItem(
-          value: index + 2,
-          child: Text('${index + 2} Semestres'),
-        ),
-      );
+  List<int> get periods => List.generate(11, (index) => index + 2);
 
   @override
   void onClose() {
