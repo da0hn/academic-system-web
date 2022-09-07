@@ -26,7 +26,7 @@ class CourseFormController extends GetxController {
     this.period$ = period ?? 0;
   }
 
-  void create() {
+  Future<void> create() async {
     var name = this.name$.text;
     var period = this.period$;
     service.create(Course(periods: period, name: name, id: null));

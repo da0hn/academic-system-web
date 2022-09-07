@@ -1,3 +1,4 @@
+import 'package:academic_system/components/shared/index.dart';
 import 'package:academic_system/constants.dart';
 import 'package:academic_system/modules/courses/controllers/course_form_controller.dart';
 import 'package:academic_system/modules/courses/course_routes.dart';
@@ -86,9 +87,13 @@ class CourseForm extends GetView<CourseFormController> {
                       height: 60,
                       width: 200,
                       child: TextButton.icon(
-                        onPressed: () {
+                        onPressed: () async {
                           this.controller.create();
-                          Get.offAndToNamed(CourseRoutes.root);
+                          await Alerts.success(
+                            message: 'Curso criado com sucesso',
+                            context: context,
+                          );
+                          Get.toNamed(CourseRoutes.root);
                         },
                         icon: const Icon(Icons.add_outlined, size: 38),
                         style: Theme.of(context).textButtonTheme.style,
