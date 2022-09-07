@@ -7,6 +7,7 @@ class CourseServiceInMemory implements CourseService {
 
   @override
   Future<void> create(Course course) async {
+    course.id = _db.length + 1;
     _db.add(course);
   }
 
