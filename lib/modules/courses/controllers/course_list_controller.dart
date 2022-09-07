@@ -18,13 +18,19 @@ class CourseListController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void onReady() async {
+    await _fetchCourses();
+    super.onReady();
+  }
+
   Future<void> _fetchCourses() async {
     var courses = await service.fetchCourses();
     _courses$.assignAll(courses);
   }
 
   addRandomCourse() async {
-    const course = Course(periods: 10, name: 'Teste 1', id: 999);
+    final course = Course(periods: 10, name: 'Teste 1', id: 999);
     service.create(course);
     _fetchCourses();
   }
