@@ -1,11 +1,12 @@
-import 'package:academic_system/constants.dart';
-import 'package:academic_system/modules/courses/course_routes.dart';
-import 'package:academic_system/modules/home/main_screen.dart';
-import 'package:academic_system/modules/student/student_screen.dart';
-import 'package:academic_system/modules/subject/subject_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'constants.dart';
+import 'modules/courses/course_routes.dart';
+import 'modules/home/main_screen.dart';
+import 'modules/student/student_screen.dart';
+import 'modules/subject/subject_screen.dart';
 
 void main() {
   runApp(const AcademicSystem());

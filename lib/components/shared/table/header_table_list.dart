@@ -1,5 +1,6 @@
-import 'package:academic_system/constants.dart';
 import 'package:flutter/material.dart';
+
+import '../../../constants.dart';
 
 class HeaderTableList extends StatelessWidget {
   const HeaderTableList({

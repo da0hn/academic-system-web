@@ -1,11 +1,12 @@
-import 'package:academic_system/components/shared/base_layout.dart';
-import 'package:academic_system/components/shared/table/table.dart';
-import 'package:academic_system/constants.dart';
-import 'package:academic_system/domain/model/course.dart';
-import 'package:academic_system/modules/courses/controllers/course_list_controller.dart';
-import 'package:academic_system/modules/courses/course_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../components/shared/base_layout.dart';
+import '../../../components/shared/table/table.dart';
+import '../../../constants.dart';
+import '../../../domain/model/course.dart';
+import '../controllers/course_list_controller.dart';
+import '../course_routes.dart';
 
 class ListCourseScreen extends GetView<CourseListController> {
   const ListCourseScreen({Key? key}) : super(key: key);

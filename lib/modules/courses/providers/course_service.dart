@@ -1,4 +1,4 @@
-import 'package:academic_system/domain/model/course.dart';
+import '../../../domain/model/index.dart';
 
 abstract class CourseService {
   Future<List<Course>> fetchCourses();

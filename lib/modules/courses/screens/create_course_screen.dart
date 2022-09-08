@@ -1,7 +1,8 @@
-import 'package:academic_system/components/shared/base_layout.dart';
-import 'package:academic_system/constants.dart';
-import 'package:academic_system/modules/courses/components/course_form.dart';
 import 'package:flutter/material.dart';
+
+import '../../../components/shared/base_layout.dart';
+import '../../../constants.dart';
+import '../components/course_form.dart';
 
 class CreateCourseScreen extends StatelessWidget {
   const CreateCourseScreen({Key? key}) : super(key: key);

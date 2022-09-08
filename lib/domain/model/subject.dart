@@ -1,4 +1,4 @@
-import 'package:academic_system/domain/model/course.dart';
+import 'course.dart';
 
 class Subject {
   final int _id;

@@ -1,7 +1,8 @@
-import 'package:academic_system/domain/model/course.dart';
-import 'package:academic_system/mock.dart';
-import 'package:academic_system/modules/courses/providers/course_service.dart';
 import 'package:get/get.dart';
+
+import '../../../domain/model/course.dart';
+import '../../../mock.dart';
+import 'course_service.dart';
 
 class CourseServiceInMemory implements CourseService {
   final _db = MockData.courses;

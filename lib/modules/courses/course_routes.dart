@@ -1,7 +1,8 @@
-import 'package:academic_system/modules/courses/course_binding.dart';
-import 'package:academic_system/modules/courses/screens/create_course_screen.dart';
-import 'package:academic_system/modules/courses/screens/list_course_screen.dart';
 import 'package:get/get.dart';
+
+import 'course_binding.dart';
+import 'screens/create_course_screen.dart';
+import 'screens/list_course_screen.dart';
 
 class CourseRoutes {
   CourseRoutes._();

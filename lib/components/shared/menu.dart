@@ -1,7 +1,8 @@
-import 'package:academic_system/constants.dart';
-import 'package:academic_system/modules/courses/course_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../constants.dart';
+import '../../modules/courses/course_routes.dart';
 
 class Menu extends StatelessWidget {
   const Menu({

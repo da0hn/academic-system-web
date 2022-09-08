@@ -1,5 +1,6 @@
-import 'package:academic_system/components/shared/base_layout.dart';
 import 'package:flutter/material.dart';
+
+import '../../components/shared/base_layout.dart';
 
 class StudentScreen extends StatelessWidget {
   const StudentScreen({Key? key}) : super(key: key);

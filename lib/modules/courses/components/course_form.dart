@@ -1,11 +1,12 @@
-import 'package:academic_system/components/shared/index.dart';
-import 'package:academic_system/constants.dart';
-import 'package:academic_system/modules/courses/controllers/course_form_controller.dart';
-import 'package:academic_system/modules/courses/course_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
+
+import '../../../components/shared/index.dart';
+import '../../../constants.dart';
+import '../controllers/course_form_controller.dart';
+import '../course_routes.dart';
 
 class CourseForm extends GetView<CourseFormController> {
   final formKey = GlobalKey<FormBuilderState>();

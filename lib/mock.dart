@@ -1,6 +1,4 @@
-import 'package:academic_system/domain/model/course.dart';
-import 'package:academic_system/domain/model/student.dart';
-import 'package:academic_system/domain/model/subject.dart';
+import 'domain/model/index.dart';
 
 class MockData {
   static List<Course> courses = [

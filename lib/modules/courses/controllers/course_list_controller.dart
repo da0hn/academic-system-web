@@ -1,6 +1,7 @@
-import 'package:academic_system/domain/model/course.dart';
-import 'package:academic_system/modules/courses/providers/course_service.dart';
 import 'package:get/get.dart';
+
+import '../../../domain/model/course.dart';
+import '../providers/course_service.dart';
 
 class CourseListController extends GetxController {
   final _courses$ = <Course>[].obs;
