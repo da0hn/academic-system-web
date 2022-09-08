@@ -21,13 +21,13 @@ class CreateCourseScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: const [
-                    SizedBox(height: Constraints.padding24),
+                  children: [
+                    const SizedBox(height: Constraints.padding24),
                     Expanded(
                       flex: 6,
                       child: CourseForm(),
                     ),
-                    SizedBox(height: Constraints.padding24),
+                    const SizedBox(height: Constraints.padding24),
                   ],
                 ),
               ),

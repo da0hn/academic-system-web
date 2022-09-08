@@ -1,14 +1,12 @@
 import 'package:academic_system/domain/model/course.dart';
 import 'package:academic_system/modules/courses/providers/course_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 
 class CourseFormController extends GetxController {
+  final formKey = GlobalKey<FormBuilderState>();
   final CourseService service;
-
-  final formKey = GlobalKey<FormState>();
-  final name$ = TextEditingController();
-  var period$ = 0;
 
   CourseFormController({
     required this.service,
@@ -16,19 +14,14 @@ class CourseFormController extends GetxController {
 
   List<int> get periods => List.generate(11, (index) => index + 2);
 
-  @override
-  void onClose() {
-    name$.dispose();
-    super.onClose();
-  }
-
-  void changePeriod(int? period) {
-    this.period$ = period ?? 0;
-  }
-
-  Future<void> create() async {
-    var name = this.name$.text;
-    var period = this.period$;
-    service.create(Course(periods: period, name: name, id: null));
+  Future<void> create({
+    required String name,
+    required int periods,
+  }) async {
+    service.create(Course(
+      id: null,
+      periods: periods,
+      name: name,
+    ));
   }
 }

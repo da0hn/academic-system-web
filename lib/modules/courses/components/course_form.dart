@@ -3,10 +3,14 @@ import 'package:academic_system/constants.dart';
 import 'package:academic_system/modules/courses/controllers/course_form_controller.dart';
 import 'package:academic_system/modules/courses/course_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 
 class CourseForm extends GetView<CourseFormController> {
-  const CourseForm({
+  final formKey = GlobalKey<FormBuilderState>();
+
+  CourseForm({
     Key? key,
   }) : super(key: key);
 
@@ -22,15 +26,23 @@ class CourseForm extends GetView<CourseFormController> {
       ),
       child: Padding(
         padding: const EdgeInsets.all(Constraints.padding24),
-        child: Form(
-          key: controller.formKey,
+        child: FormBuilder(
+          key: this.formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(Constraints.padding16),
-                child: TextFormField(
+                child: FormBuilderTextField(
+                  name: 'course_name',
                   cursorColor: Colors.black,
+                  maxLength: 50,
+                  validator: FormBuilderValidators.compose([
+                    FormBuilderValidators.required(
+                      errorText: 'O nome do curso é obrigatório',
+                    ),
+                  ]),
                   decoration: const InputDecoration(
                     prefixIcon: Icon(
                       Icons.book_outlined,
@@ -46,7 +58,6 @@ class CourseForm extends GetView<CourseFormController> {
                       borderSide: BorderSide(color: Colors.black38),
                     ),
                   ),
-                  controller: controller.name$,
                 ),
               ),
               Padding(
@@ -55,12 +66,19 @@ class CourseForm extends GetView<CourseFormController> {
                   children: [
                     SizedBox(
                       width: 200,
-                      child: DropdownButtonFormField<int>(
-                        onChanged: this.controller.changePeriod,
+                      child: FormBuilderDropdown<int>(
+                        name: 'course_period',
+                        validator: FormBuilderValidators.compose([
+                          FormBuilderValidators.required(
+                            errorText: 'O semestre do curso é obrigatório',
+                          ),
+                        ]),
                         borderRadius: BorderRadius.circular(
                           Constraints.padding16,
                         ),
-                        hint: const Text('Quantidade de Semestres'),
+                        decoration: const InputDecoration(
+                          hintText: 'Quantidade de Semestres',
+                        ),
                         items: this
                             .controller
                             .periods
@@ -88,7 +106,12 @@ class CourseForm extends GetView<CourseFormController> {
                       width: 200,
                       child: TextButton.icon(
                         onPressed: () async {
-                          this.controller.create();
+                          this.formKey.currentState?.saveAndValidate();
+                          var values = this.formKey.currentState?.value;
+                          this.controller.create(
+                                name: values!['course_name'],
+                                periods: values['course_period'],
+                              );
                           await Alerts.success(
                             message: 'Curso criado com sucesso',
                             context: context,
