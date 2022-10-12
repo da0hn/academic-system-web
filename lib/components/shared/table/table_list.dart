@@ -37,13 +37,11 @@ class TableList<T> extends StatelessWidget {
                   DataTable(
                     columns: [
                       ...this.headers,
-                      TableData.header(context, 'AÇÕES'),
                     ],
                     rows: this
                         .data
                         .map((e) => DataRow(cells: [
-                              ...this.mapper(context, e),
-                              TableData.actions(context)
+                              ...this.mapper(context, e)
                             ]))
                         .toList(),
                     columnSpacing: Constraints.padding8,
@@ -83,12 +81,12 @@ class TableData {
     );
   }
 
-  static DataCell actions(BuildContext context) {
+  static DataCell actions(BuildContext context, VoidCallback onPressed) {
     return DataCell(
       Row(
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: onPressed,
             icon: const Icon(Icons.delete),
             color: Colors.red,
             iconSize: 24,

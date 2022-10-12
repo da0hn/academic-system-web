@@ -32,12 +32,16 @@ class ListCourseScreen extends GetView<CourseListController> {
                     TableData.header(context, 'ID'),
                     TableData.header(context, 'NOME'),
                     TableData.header(context, 'PERIODOS'),
+                    TableData.header(context, 'AÇÕES'),
                   ],
                   mapper: (context, element) {
                     return [
                       TableData.row(context, element.id),
                       TableData.row(context, element.name),
-                      TableData.row(context, element.periods)
+                      TableData.row(context, element.periods),
+                      TableData.actions(context, () {
+                        controller.delete(element.id!);
+                      }),
                     ];
                   },
                 ),

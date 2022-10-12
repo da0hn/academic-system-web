@@ -35,4 +35,9 @@ class CourseListController extends GetxController {
     service.create(course);
     _fetchCourses();
   }
+
+  void delete(int id) async {
+    service.delete(id);
+    _fetchCourses();
+  }
 }
